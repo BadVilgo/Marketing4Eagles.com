@@ -50,7 +50,7 @@ nav ul li a {
     background-color: #2B2B2B;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden important!;
     display: none; /* Hidden by default */
     transition: transform 0.3s ease;
 }
