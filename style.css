@@ -1,0 +1,29 @@
+@import url('components/header/header.css');
+@import url('components/main/main.css');
+@import url('components/footer/footer.css');
+
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: auto;
+    font-family: Poppins, sans-serif;
+}
+
+#oferta{
+    background-color: green;
+}
+
+#portfolio{
+    background-color: blue;
+}
+
+#kontakt{
+    background-color: orange;
+}
