@@ -6,3 +6,17 @@ main{
     margin: auto;
     
 }
+
+
+
+
+/* RESPONSYWNOŚC */
+@media only screen and (max-width: 1024px) {
+    main {
+        margin-top: 50px;
+    }
+    section{
+        padding: 20px 50px;
+    }
+
+  }
