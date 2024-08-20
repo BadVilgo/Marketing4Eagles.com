@@ -28,26 +28,39 @@ function addAnimation() {
 ///////////////////// Kręcenie się karuzeli w prawo
 ///////////////////// Pokazanie nowej grafiki po kliknięciu w grafikę karuzeli. Otworzenie okna podglądu.
 
-const imgs = document.querySelectorAll(".img");
+const images = document.querySelectorAll(".img1, .img2, .img3, .img4, .img5, .img6");
 const imgPreview = document.querySelector(".img-preview");  
 const closeImgBtn = document.querySelector(".close-preview");
+const imgBig = document.querySelector(".img-big");
 
 
-function showBigImg(){
+function updateImageSrc(event) {
+  // Extract the class name that starts with 'img' from the clicked element
+  const clickedImgClass = Array.from(event.target.classList).find(cls => cls.startsWith('img'));
+  
+  // Extract the number from the class name (e.g., '1' from 'img1')
+  const imgNumber = clickedImgClass.replace('img', '');
+
+  // Construct the new src path based on the image number
+  imgBig.src = `img/projekt${imgNumber}BIG.jpg`;
+  
+  // Display the image preview
   imgPreview.style.display = "flex";
-};
+}
 
+
+// Run on click & Loop through all selected images and add the event listener
+images.forEach(img => {
+  img.addEventListener("click", updateImageSrc);
+});
+
+
+//Closing image
 function closeBigImg(){
   imgPreview.style.display = "none";
 };
 
-imgs.forEach(img => {
-  img.addEventListener("click", showBigImg)
-});
-
 closeImgBtn.addEventListener("click", closeBigImg);
-
-
 
 ///////////////////// Pokazanie nowej grafiki po kliknięciu w grafikę karuzeli. Otworzenie okna podglądu.
 
