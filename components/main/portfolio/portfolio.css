@@ -68,12 +68,12 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.302);
+    backdrop-filter: blur(5px);
     overflow: hidden;
-    display: flex;
     justify-content: center;
     align-items: center;
-    /* display: none; */
+    display:none;
   }
 
 .img1-preview{

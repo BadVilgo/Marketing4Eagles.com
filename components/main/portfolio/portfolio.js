@@ -28,20 +28,31 @@ function addAnimation() {
 ///////////////////// Kręcenie się karuzeli w prawo
 ///////////////////// Pokazanie nowej grafiki po kliknięciu w grafikę karuzeli. Otworzenie okna podglądu.
 
-// 1. On click div display:block div z grafiką id1BIG
-// div ma być absolute,display none, z-index 1, top 0, left 0, 
-// grafika w div wyśrodkowana
-// w prawym górnym rogu x do zamknięcia okna
-// 2. on click x, display: none;
+const imgs = document.querySelectorAll(".img");
+const imgPreview = document.querySelector(".img-preview");  
+const closeImgBtn = document.querySelector(".close-preview");
 
-const img = document.querySelector(".img");
-const imgPreview = document.querySelector(".xxx");
-
-img.addEventListener("click", showBigImg);
 
 function showBigImg(){
-    imgPreview.style.display = "block";
-}
+  imgPreview.style.display = "flex";
+};
+
+function closeBigImg(){
+  imgPreview.style.display = "none";
+};
+
+imgs.forEach(img => {
+  img.addEventListener("click", showBigImg)
+});
+
+closeImgBtn.addEventListener("click", closeBigImg);
+
 
 
 ///////////////////// Pokazanie nowej grafiki po kliknięciu w grafikę karuzeli. Otworzenie okna podglądu.
+
+
+
+
+
+
