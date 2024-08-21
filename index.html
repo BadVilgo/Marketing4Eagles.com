@@ -49,12 +49,12 @@
     />
 
     <!-- Linki do plików CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/public/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <!-- Linki do plików JS -->
-    <script src="components/header/header.js" defer></script>
-    <script src="components/main/portfolio/portfolio.js" defer></script>
+    <script src="public/header/header.js" defer></script>
+    <script src="public/main/portfolio/portfolio.js" defer></script>
   </head>
   <body>
     <header>
@@ -142,24 +142,20 @@
       </section>
       <section id="kontakt">
         <h2>Kontakt</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam congue
-            lobortis convallis. Vestibulum ante ipsum primis in faucibus orci
-            luctus et ultrices posuere cubilia curae; Sed nec porta orci.
-            Vestibulum aliquam, ligula vel iaculis sagittis, ipsum felis eleifend
-            tortor, id tempor metus enim pharetra mi. Etiam ac semper purus. Sed
-            sagittis auctor tortor. Cras sodales felis ac felis ultricies mattis.
-            Duis ut euismod turpis. Aenean id leo eget erat ultricies pretium.
-            Morbi rhoncus vehicula risus. In quis blandit justo. Aliquam eget
-            porta tellus, a placerat dolor. Proin dolor mauris, vehicula quis nisi
-            ut, viverra sodales est. Quisque vestibulum risus sed accumsan
-            maximus. Nunc tincidunt ultricies odio id elementum. Phasellus et
-            lectus orci. Nullam porta sapien ut eros tempor, sed ultrices nulla
-            mattis. Donec euismod dolor velit, et varius magna ornare vitae.
-            Quisque venenatis sed lectus vitae lacinia. Etiam quis imperdiet dui.
-            Vestibulum erat libero, elementum sit amet rutrum sit amet, vehicula
-            ac ante. Sed nulla justo, ultricies eu eros vitae, lacinia venenatis
-          </p>
+        <form id="contactForm" action="/send-email" method="POST">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required><br><br>
+  
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br><br>
+  
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="5" required></textarea><br><br>
+  
+          <button type="submit">Send Message</button>
+        </form>
+  
+        <div id="response"></div>
       </section>
 
 
